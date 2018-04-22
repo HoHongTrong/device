@@ -21,7 +21,6 @@
         <tr align="center">
           <th>ID</th>
           <th>Tên</th>
-          <th>Nội Dung</th>
           <th>Hình</th>
           <th>link</th>
           <th>Delete</th>
@@ -33,13 +32,12 @@
         <tr class="odd gradeX" align="center">
           <td>{{$sd->id}}</td>
           <td>{{$sd->Ten}}</td>
-          <td>{{$sd->NoiDung}}</td>
           <td>
             <img width="400px" src="upload/slide/{{$sd->Hinh}}">
           </td>
           <td>{{$sd->link}}</td>
-          <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/slide/delete/{{$sd->id}}"> Delete</a></td>
-          <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/slide/edit/{{$sd->id}}">Edit</a></td>
+          <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/slide/delete/{{$sd->id}}"> Xoá</a></td>
+          <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/slide/edit/{{$sd->id}}">Sữa</a></td>
         </tr>
           @endforeach
 

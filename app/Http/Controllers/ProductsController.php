@@ -36,9 +36,6 @@ class ProductsController extends Controller {
     $products->noi_dung = $request->noi_dung;
     $products->id_category = $request->id_category;
     $products->remember_token = $request->_token;
-    if ($request->has('link')) {
-      $products->link = $request->link;
-    }
     if ($request->hasFile('Hinh')) {
       $file = $request->file('Hinh');
       $duoi = $file->getClientOriginalExtension();
@@ -71,21 +68,18 @@ class ProductsController extends Controller {
 
   public function postEdit(Request $request, $id) {
     $this->validate($request, [
-      'Ten' => 'required',
-      'NoiDung' => 'required'
+      'tieu_de' => 'required',
+      'noi_dung' => 'required'
     ],
       [
-        'Ten.required' => 'Nhập tên products',
-        'NoiDung.required' => 'Nhập nội dung',
+        'tieu_de.required' => 'Nhập tiêu đề ',
+        'noi_dung.required' => 'Nhập nội dung',
       ]);
     $products = Products::find($id);
     $products->tieu_de = $request->tieu_de;
     $products->noi_dung = $request->noi_dung;
     $products->id_category = $request->id_category;
     $products->remember_token = $request->_token;
-    if ($request->has('link')) {
-      $products->link = $request->link;
-    }
     if ($request->hasFile('Hinh')) {
       $file = $request->file('Hinh');
       $duoi = $file->getClientOriginalExtension();
@@ -102,7 +96,7 @@ class ProductsController extends Controller {
       $products->Hinh = $Hinh;
     }
     $products->save();
-    return redirect('admin/products/edit/'.$id)->with('thongbao', 'Sữa products thành công');
+    return redirect('admin/products/edit/'.$id)->with('thongbao', 'Sữa sản phẩm thành công');
 
   }
   //------------------End Edit----------------
@@ -111,6 +105,6 @@ class ProductsController extends Controller {
   public function getDelete($id) {
     $products = Products::find($id);
     $products->delete();
-    return redirect('admin/products/list')->with('thongbao', 'xóa products thành công');
+    return redirect('admin/products/list')->with('thongbao', 'xóa sản phẩm thành công');
   }
 }

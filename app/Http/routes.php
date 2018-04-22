@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('delete/{id}', 'CategoryController@getDelete');
   });
   //------- Bills -------------------
-  Route::group(['prefix' => 'bill'], function () {
+  Route::group(['prefix' => 'bills'], function () {
     Route::get('list', 'BillsController@getList');
 
     Route::get('edit/{id}', 'BillsController@getEdit');

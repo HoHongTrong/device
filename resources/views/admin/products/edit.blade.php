@@ -5,8 +5,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">Slide
-            <small>{{$slide->Ten}}</small>
+          <h1 class="page-header">Sản Phẩm
+            <small>{{$products->Ten}}</small>
           </h1>
         </div>
         <!-- /.col-lg-12 -->
@@ -27,26 +27,27 @@
           @endif
 
           {{-- enctype="multipart/form-data" dùng để upload hình lên --}}
-          <form action="admin/slide/edit/{{$slide->id}}" method="POST" enctype="multipart/form-data">
+          <form action="admin/products/edit/{{$products->id}}" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             <div class="form-group">
-              <label>Tên:</label>
-              <input class="form-control" name="Ten" placeholder="Nhập tên slide" value="{{$slide->Ten}}"/>
-            </div>
-            <div class="form-group">
-              <label>Nội Dung</label>
-              <textarea id="demo" name="NoiDung" class="form-control ckeditor" rows="2"
-                        value="{{$slide->NoiDung}}"></textarea>
-            </div>
-            <div class="form-group">
-              <label>Link:</label>
-              <input class="form-control" name="link" placeholder="Nhập link" value="{{$slide->link}}"/>
+              <label>Tiêu Đề</label>
+              <input class="form-control" name="tieu_de" placeholder="Nhập tiêu đề" value="{{$products->tieu_de}}"/>
             </div>
             <div class="form-group">
               <label>Hình Ảnh</label>
-              <p><img width="500px" src="upload/slide/{{$slide->Hinh}}"/></p>
+              <p><img width="500px" src="upload/products/{{$products->Hinh}}"/></p>
               <input type="file" name="Hinh"/>
             </div>
+            <div class="form-group">
+              <label>Nội Dung</label>
+              <textarea id="demo" name="noi_dung" class="form-control ckeditor" rows="2"
+                        value="">{{$products->noi_dung}}</textarea>
+            </div>
+            <div class="form-group">
+              <label>Id Danh Mục</label>
+              <input class="form-control" name="id_category" placeholder="Nhập Id danh mục" value="{{$products->id_category}}"/>
+            </div>
+            
 
             <button type="submit" class="btn btn-default">Edit</button>
             <button type="reset" class="btn btn-default">Reset</button>

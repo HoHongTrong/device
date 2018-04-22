@@ -22,15 +22,14 @@ class SlideController extends Controller {
   public function postAdd(Request $request) {
     $this->validate($request, [
       'Ten' => 'required',
-      'NoiDung' => 'required'
+      'link' => 'required'
     ],
       [
         'Ten.required' => 'Nhập tên slide',
-        'NoiDung.required' => 'Nhập nội dung',
+        'link.required' => 'Nhập link',
       ]);
     $slide = new Slide();
     $slide->Ten = $request->Ten;
-    $slide->NoiDung = $request->NoiDung;
     if ($request->has('link')) {
       $slide->link = $request->link;
     }
@@ -75,7 +74,6 @@ class SlideController extends Controller {
       ]);
     $slide = Slide::find($id);
     $slide->Ten = $request->Ten;
-    $slide->NoiDung = $request->NoiDung;
     if ($request->has('link')) {
       $slide->link = $request->link;
     }

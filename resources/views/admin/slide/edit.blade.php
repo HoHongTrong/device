@@ -34,11 +34,6 @@
               <input class="form-control" name="Ten" placeholder="Nhập tên slide" value="{{$slide->Ten}}"/>
             </div>
             <div class="form-group">
-              <label>Nội Dung</label>
-              <textarea id="demo" name="NoiDung" class="form-control ckeditor" rows="2"
-                        value="{{$slide->NoiDung}}"></textarea>
-            </div>
-            <div class="form-group">
               <label>Link:</label>
               <input class="form-control" name="link" placeholder="Nhập link" value="{{$slide->link}}"/>
             </div>
@@ -48,7 +43,7 @@
               <input type="file" name="Hinh"/>
             </div>
 
-            <button type="submit" class="btn btn-default">Edit</button>
+            <button type="submit" class="btn btn-default">Sữa</button>
             <button type="reset" class="btn btn-default">Reset</button>
           </form>
         </div>
