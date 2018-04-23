@@ -25,6 +25,11 @@
             <th>Ngày sữa</th>
             <th>Delete</th>
             <th>Edit</th>
+            <th>Edit1</th>
+            <th>Edit2</th>
+            <th>Edit3</th>
+            <th>Edit4</th>            
+            <th>Edit5</th>
           </tr>
           </thead>
           <tbody>

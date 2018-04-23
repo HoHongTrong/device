@@ -5,8 +5,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header"> Sữa Danh Mục
-            <small>{{$category->ten_category}}</small>
+          <h1 class="page-header"> Sữa Đơn Hàng
+            <small>{{$bills->ho_ten}}</small>
           </h1>
         </div>
         <!-- /.col-lg-12 -->
@@ -25,15 +25,35 @@
               {{session('thongbao')}}
             </div>
           @endif
-          <form action="admin/category/edit/{{$category->id}}" method="POST">
+          <form action="admin/bills/edit/{{$bills->id}}" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 
             <div class="form-group">
-              <label>Tên Danh Mục</label>
-              <input class="form-control" name="ten_category" placeholder="Điền tên Danh Mục" value="{{$category->ten_category}}"/>
+              <label>Họ Tên</label>
+              <input class="form-control" name="ho_ten" placeholder="nhập tên danh mục" value="{{$bills->ho_ten}}"/>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input class="form-control" type="email" name="email" placeholder="nhập email" value="{{$bills->email}}"/>
+            </div>
+            <div class="form-group">
+              <label>Số Điện Thoại</label>
+              <input class="form-control" name="so_dt" placeholder="nhập số điện thoại" value="{{$bills->so_dt}}"/>
+            </div>
+            <div class="form-group">
+              <label>Tên Công Ty</label>
+              <input class="form-control" name="ten_cty" placeholder="nhập tên công ty" value="{{$bills->ten_cty}}"/>
+            </div>
+            <div class="form-group">
+              <label>Địa Chỉ</label>
+              <input class="form-control" name="dia_chi" placeholder="nhập địa chỉ" value="{{$bills->dia_chi}}"/>
+            </div>
+            <div class="form-group">
+              <label>Trạng Thái</label>
+              <input class="form-control" name="trang_thai" placeholder="nhập trạng thái" value="{{$bills->trang_thai}}"/>
             </div>
 
-            <button type="submit" class="btn btn-default">Sữa</button>
+            <button type="submit" class="btn btn-default">Thêm</button>
             <button type="reset" class="btn btn-default">Reset</button>
           </form>
         </div>
